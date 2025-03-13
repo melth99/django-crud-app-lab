@@ -1,6 +1,7 @@
 # main_app/views.py
 
 from django.shortcuts import render
+from .models import Predator
 
 # Import HttpResponse to send text-based responses
 
@@ -18,6 +19,7 @@ def about(request):
    return render(request, 'about.html')
 
 def index(request):
+    predators = Predator.objects.all()
     return render(request, 'predators/index.html', {'predators':predators})
 
 
