@@ -6,43 +6,33 @@ from django.urls import reverse
 
 # Create your models here.
 
-ANIMAL_CLASS = (
-        'mammal',
-        'amphibian',
-        'bird',
-        'fish',
-        'reptile'
-)
-
-DIET = (
-    'Omnivore',
-    'Herbivore',
-    'Carnivore'
-)
 
 class Predator (models.Model):
+    ANIMAL_CLASS = (
+        ('mammal', 'Mammal'),
+        ('amphibian', 'Amphibian'),
+        ('bird', 'Bird'),
+        ('fish', 'Fish'),
+        ('reptile','Reptile')
+)
+    DIET = (
+        ('omnivore','Omnivore'),
+        ('herbivore' ,'Herbivore'),
+        ('carnivore','Carnivore'),
+        ('N/A','N/A')
+)
+    name = models.CharField(max_length=50, default='Unknown')
+    diet = models.CharField(max_length=50, choices = DIET, default = 'Herbivore')
+    animal_class = models.CharField(max_length=50, choices = ANIMAL_CLASS, default='mammal')
+    prey = models.CharField(max_length=50, default='Unknown!')
+      
+
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse("predator_detail", kwargs={"pk": self.pk}) #no predator detail yet
 
-    name = models.CharField(max_length=100)
-    species = models.CharField(max_length=100)
-    """ diet = models.CharField(
-      
-        choices=DIET,
-        #default =
-        )
-    #prey = models.ForeignKey(Prey, on )
-    
-    
- """
 
-    
-class Prey (models.Model):
-    
-    
-    def __str__(self):
-        return self.name
+
 

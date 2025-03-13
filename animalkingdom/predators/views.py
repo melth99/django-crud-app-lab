@@ -9,22 +9,6 @@ from django.http import HttpResponse
 # Define the home view function
 
 
-class Predators:
-    def __init__(self,name,diet,prey):
-        self.name = name
-        self.diet = diet
-        self.prey = prey
-        
-        
-predators = [
-    Predators('hawk','carnivore','rat'),
-    Predators('tiger','carnivore','gazelle'),
-    Predators('cat','carnivore','mouse'),
-    Predators('wolf', 'carnivore', 'bunny'),
-    Predators('giraffe', 'herbivore', 'leaf'),
-    Predators('human','omnivore','cow')
-]
-
 
 def home(request):
     # Send a simple HTML response
