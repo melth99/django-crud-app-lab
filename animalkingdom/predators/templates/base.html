@@ -17,6 +17,9 @@
 
     <main>
       {{% block content %}
+      <li><a href="{% url 'index' %}">All Cats</a></li>
+  <li><a href="{% url 'predator-create' %}">Add a Cat</a></li>
+  <li><a href="{% url 'about' %}">About</a></li>
 
       {% endblock %}}
     </main>

@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 #In Django, reverse is a function that allows you to retrieve a
 #URL using its name defined in your URL patterns. 
 # Instead of hardcoding URLs, you can refer to them by their names,
@@ -25,6 +26,7 @@ class Predator (models.Model):
     diet = models.CharField(max_length=50, choices = DIET, default = 'Herbivore')
     animal_class = models.CharField(max_length=50, choices = ANIMAL_CLASS, default='mammal')
     prey = models.CharField(max_length=50, default='Unknown!')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
       
 
     def __str__(self):

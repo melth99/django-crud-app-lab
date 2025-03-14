@@ -1,6 +1,8 @@
 # main_app/views.py
-
+# 12345
 from django.shortcuts import render
+from .models import Predator
+from django.views.generic.edit import CreateView
 from .models import Predator
 
 # Import HttpResponse to send text-based responses
@@ -20,7 +22,16 @@ def about(request):
 
 def index(request):
     predators = Predator.objects.all()
-    return render(request, 'predators/index.html', {'predators':predators})
+    return render(request, 'index.html', {'predators':predators})
+
+# main-app/views.py
+
+class PredatorCreate(CreateView):
+    model = Predator
+    fields = '__all__'
+    success_url = '/predators/'
+
+
 
 
 

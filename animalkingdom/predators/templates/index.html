@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  {% for predator in predators %}
+    <div>
+      <h2>{{ predator.name }}</h2>
+      <h4>I love to eat {{ predator.prey }}s and I have an {{ predator.diet }} diet </h4>
+    </div>
+  {% endfor %}
+{% endblock %}
+
