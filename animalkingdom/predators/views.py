@@ -2,7 +2,7 @@
 # 12345
 from django.shortcuts import render
 from .models import Predator
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView,   DeleteView, UpdateView
 from .models import Predator
 
 # Import HttpResponse to send text-based responses
@@ -35,7 +35,15 @@ class PredatorCreate(CreateView):
     fields = '__all__'
     #success_url = '/predators/'
 
-
+class PredatorDelete(DeleteView):
+    model = Predator
+    pk_url_kwarg = 'id'
+    success_url = '/predators/'
+    
+class PredatorUpdate(UpdateView):
+    model = Predator
+    #pk_url_kwarg = 'id'
+    fields = '__all__'
 
 
 

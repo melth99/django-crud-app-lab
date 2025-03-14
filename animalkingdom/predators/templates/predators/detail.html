@@ -10,6 +10,11 @@
     <li> prey: {{ predator.prey }}</li>
 
 </ul>
+
+<ul>
 <li><a href="{% url 'index' %}">All Cats</a></li>
+<li><a href="{% url 'predator-update' predator.id %}" >Edit</a></li>
+{% comment %} <li> <a href="{% url 'predator-delete' predator.id %}">Delete</a></li> {% endcomment %}
+</ul>
 {% endblock content %}
     
