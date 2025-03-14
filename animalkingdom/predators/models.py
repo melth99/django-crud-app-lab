@@ -26,14 +26,14 @@ class Predator (models.Model):
     diet = models.CharField(max_length=50, choices = DIET, default = 'Herbivore')
     animal_class = models.CharField(max_length=50, choices = ANIMAL_CLASS, default='mammal')
     prey = models.CharField(max_length=50, default='Unknown!')
-    #user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
       
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("predator_detail", kwargs={"pk": self.pk}) #no predator detail yet
+        return reverse("predator-detail", kwargs={"predator_id": self.id}) #no predator detail yet
 
 
 

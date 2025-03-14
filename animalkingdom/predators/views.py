@@ -33,7 +33,7 @@ def predator_detail(request, predator_id):
 class PredatorCreate(CreateView):
     model = Predator
     fields = '__all__'
-   # success_url = '/predators/'
+    #success_url = '/predators/'
 
 
 
