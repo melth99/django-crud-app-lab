@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+
+{% block content %}
+
+<h1> Welcome to {{ predator.name }}'s details</h1>
+<ul>
+    <li> Diet:{{ predator.diet }} </li>
+    <li>animal class: {{ predator.animal_class }}</li>
+    <li> prey: {{ predator.prey }}</li>
+
+</ul>
+
+{% endblock content %}
+    

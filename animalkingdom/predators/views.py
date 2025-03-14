@@ -24,12 +24,16 @@ def index(request):
     predators = Predator.objects.all()
     return render(request, 'index.html', {'predators':predators})
 
+def predator_detail(request, predator_id):
+    predator = Predator.objects.get(id=predator_id)
+    return render(request, 'predators/detail.html', {'predator':predator})
+
 # main-app/views.py
 
 class PredatorCreate(CreateView):
     model = Predator
     fields = '__all__'
-    success_url = '/predators/'
+   # success_url = '/predators/'
 
 
 

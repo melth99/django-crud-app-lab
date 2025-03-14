@@ -9,4 +9,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('predators/', views.index, name= 'index'),
     path('predators/create/', views.PredatorCreate.as_view(), name='predator-form'),
+    path('predators/<int:predator_id>/', views.predator_detail , name='predator-detail')
 ]
