@@ -37,12 +37,12 @@ class PredatorCreate(CreateView):
 
 class PredatorDelete(DeleteView):
     model = Predator
-    pk_url_kwarg = 'id'
+    pk_url_kwarg = 'predator_id'
     success_url = '/predators/'
     
 class PredatorUpdate(UpdateView):
     model = Predator
-    #pk_url_kwarg = 'id'
+    pk_url_kwarg = 'predator_id'  
     fields = '__all__'
 
 
